@@ -206,4 +206,4 @@ python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂
 
 如果這個工具幫你省下時間，歡迎請我喝杯珍奶，讓伺服器繼續轉下去 🧡
 
-[![請我喝珍奶！](https://img.shields.io/badge/🧋_請我喝珍奶！-AD5138?style=for-the-badge)](https://drpwchen.bobaboba.me)
+<a href="https://drpwchen.bobaboba.me"><img src="https://s3.ap-southeast-1.amazonaws.com/media.anyonelab.com/images/boba/boba-embed-icon.png" height="36" alt="boba icon" align="middle"> <img src="https://img.shields.io/badge/BUY_ME_A_BOBA-F8E0BE?style=for-the-badge" height="36" alt="BUY ME A BOBA" align="middle"></a>
