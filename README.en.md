@@ -204,3 +204,9 @@ Even a just-for-me site must be defended like a public service once it's on the 
 ---
 
 *Built by 陳柏威 (Po-Wei Chen) — a PM&R physician. It started as "stop missing the good papers." If it helps you keep up with the literature, a star ⭐ is welcome.*
+
+## 🧋 Support
+
+If this tool saves you time, you can buy me a boba — it keeps the servers running 🧡
+
+[![Give me a Boba!](https://img.shields.io/badge/🧋_Give_me_a_Boba!-AD5138?style=for-the-badge)](https://drpwchen.bobaboba.me)
