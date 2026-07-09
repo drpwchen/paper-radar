@@ -201,3 +201,9 @@ python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂
 ---
 
 *Built by 陳柏威 — 復健科醫師。本來只是想少漏幾篇好文。如果它對你追文獻有幫助，歡迎 star ⭐。*
+
+## 🧋 支持
+
+如果這個工具幫你省下時間，歡迎請我喝杯珍奶，讓伺服器繼續轉下去 🧡
+
+[![請我喝珍奶！](https://img.shields.io/badge/🧋_請我喝珍奶！-AD5138?style=for-the-badge)](https://drpwchen.bobaboba.me)
