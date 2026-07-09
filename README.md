@@ -2,6 +2,8 @@
 
 # paper-radar · 論文學習雷達
 
+🔭 **發現端** paper-radar ｜ 📖 **閱讀端** [claude-paper-tools](https://github.com/drpwchen/claude-paper-tools) — 雷達挑出的論文，交給 `/paper-review` 評讀品質、`/paper-digest` 快速吸收；兩個 repo 合起來是完整的讀論文 pipeline。
+
 > 一套**個人化的文獻追蹤與學習雷達**。把幾十個期刊 RSS／PubMed 搜尋自動抓回來、依你的研究興趣評分排序，推到一個**只給自己看的私密網頁**上滑、勾選；選中的論文再回流到你自己的筆記系統。最初是我為了準備**復健科（PMR, Physical Medicine & Rehabilitation）**專科與追新文而做的 side project，整理成可公開、可自架的開源版本。
 
 🔒 我自己的站台跑在 Cloudflare Access 後面（私密、個人興趣資料），所以沒有公開 demo。下方以**截圖**呈現。
