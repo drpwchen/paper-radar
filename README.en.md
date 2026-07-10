@@ -2,7 +2,7 @@ Language： [繁體中文](README.md) ｜ **English**
 
 # paper-radar
 
-🔭 **Discovery end** paper-radar ｜ 📖 **Reading end** [claude-paper-tools](https://github.com/drpwchen/claude-paper-tools) — papers the radar picks are handed to `/paper-review` (appraisal) and `/paper-digest` (absorption); together the two repos form the full paper-reading pipeline.
+🔭 **Discovery** paper-radar ｜ ⬇️ **Download** [paper-fetch](https://github.com/drpwchen/paper-fetch) ｜ 📖 **Reading** [claude-paper-tools](https://github.com/drpwchen/claude-paper-tools) — papers the radar picks are fetched in full text by paper-fetch's route ladder, then handed to `/paper-review` (appraisal) and `/paper-digest` (absorption); together the three repos form the full paper-reading pipeline.
 
 > A **personal literature-tracking & learning radar**. It pulls dozens of journal RSS / PubMed-search feeds, scores and ranks them against *your* research interests, and pushes them to a **private, just-for-you web page** to swipe and triage; the papers you pick then flow back into your own note system. I originally built it to keep up with new papers while studying for the **PM&R (Physical Medicine & Rehabilitation)** board exam — this is the cleaned-up, self-hostable open-source version.
 
