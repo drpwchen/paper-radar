@@ -4,6 +4,10 @@
 
 本專案的重大變更紀錄。版本語意：`vMAJOR.MINOR`。
 
+## v2.0.1 (2026-07-14) — 文件：下游 repo 更名
+
+- 閱讀端 repo `claude-paper-tools` 更名為 **`paper-review-and-digest`**（讓名字直接說明它做什麼）。README 中英版的互連連結同步更新；舊 GitHub 網址仍會自動轉址，既有連結不會斷。
+
 ## v2.0 (2026-07-07) — PRPM：個人研究偏好模型（Personal Research Preference Model）
 
 把 v1 的「keyword 排序器」重寫成一個會自我學習的**個人研究偏好模型**。設計文件：[`docs/DESIGN-PRPM.md`](docs/DESIGN-PRPM.md)。
@@ -34,6 +38,10 @@
 # Changelog
 
 Notable changes. Versioning: `vMAJOR.MINOR`.
+
+## v2.0.1 (2026-07-14) — Docs: downstream repo renamed
+
+- The reading-end repo `claude-paper-tools` was renamed to **`paper-review-and-digest`** (the name now says what it does). Cross-links in both README variants updated; the old GitHub URL still redirects, so existing links keep working.
 
 ## v2.0 (2026-07-07) — PRPM: Personal Research Preference Model
 

@@ -2,7 +2,7 @@
 
 # paper-radar · 論文學習雷達
 
-🔭 **發現端** paper-radar ｜ ⬇️ **下載端** [paper-fetch](https://github.com/drpwchen/paper-fetch) ｜ 📖 **閱讀端** [claude-paper-tools](https://github.com/drpwchen/claude-paper-tools) — 雷達挑出的論文，由 paper-fetch 依 route ladder 取回全文，再交給 `/paper-review` 評讀品質、`/paper-digest` 快速吸收；三個 repo 合起來是完整的讀論文 pipeline。
+🔭 **發現端** paper-radar ｜ ⬇️ **下載端** [paper-fetch](https://github.com/drpwchen/paper-fetch) ｜ 📖 **閱讀端** [paper-review-and-digest](https://github.com/drpwchen/paper-review-and-digest) — 雷達挑出的論文，由 paper-fetch 依 route ladder 取回全文，再交給 `/paper-review` 評讀品質、`/paper-digest` 快速吸收；三個 repo 合起來是完整的讀論文 pipeline。
 
 > 一套**個人化的文獻追蹤與學習雷達**。把幾十個期刊 RSS／PubMed 搜尋自動抓回來、依你的研究興趣評分排序，推到一個**只給自己看的私密網頁**上滑、勾選；選中的論文再回流到你自己的筆記系統。最初是我為了準備**復健科（PMR, Physical Medicine & Rehabilitation）**專科與追新文而做的 side project，整理成可公開、可自架的開源版本。
 
@@ -95,8 +95,8 @@
 > 這段**緊綁我個人的 Obsidian + LLM 工具鏈，不在本 repo 內**。`_worker.js` 的 `GET /api/state?unsynced=1` 就是給下游拉資料的接口——你可以接成任何你要的東西（存進 Notion、丟給某個 LLM 整理、寄 email 給自己……）。把它當成「雷達已經幫你篩好、排好、標好全文，剩下你愛怎麼用」。
 
 > 🔗 我自己下游那兩支「🔬 品質評讀 / 📚 內容整理」的 Claude Code skill 已經開源，就是
-> [**claude-paper-tools**](https://github.com/drpwchen/claude-paper-tools)（`/paper-review` + `/paper-digest`，
-> 含確定性 GRADE 計算與 CrossRef 引用查核）。paper-radar 負責「發現/挑選」，claude-paper-tools 負責「評讀/吸收」，兩端合起來就是完整的讀論文 pipeline。
+> [**paper-review-and-digest**](https://github.com/drpwchen/paper-review-and-digest)（`/paper-review` + `/paper-digest`，
+> 含確定性 GRADE 計算與 CrossRef 引用查核）。paper-radar 負責「發現/挑選」，paper-review-and-digest 負責「評讀/吸收」，兩端合起來就是完整的讀論文 pipeline。
 
 ## PRPM v2 · 個人研究偏好模型（Personal Research Preference Model）
 

@@ -2,7 +2,7 @@ Language： [繁體中文](README.md) ｜ **English**
 
 # paper-radar
 
-🔭 **Discovery** paper-radar ｜ ⬇️ **Download** [paper-fetch](https://github.com/drpwchen/paper-fetch) ｜ 📖 **Reading** [claude-paper-tools](https://github.com/drpwchen/claude-paper-tools) — papers the radar picks are fetched in full text by paper-fetch's route ladder, then handed to `/paper-review` (appraisal) and `/paper-digest` (absorption); together the three repos form the full paper-reading pipeline.
+🔭 **Discovery** paper-radar ｜ ⬇️ **Download** [paper-fetch](https://github.com/drpwchen/paper-fetch) ｜ 📖 **Reading** [paper-review-and-digest](https://github.com/drpwchen/paper-review-and-digest) — papers the radar picks are fetched in full text by paper-fetch's route ladder, then handed to `/paper-review` (appraisal) and `/paper-digest` (absorption); together the three repos form the full paper-reading pipeline.
 
 > A **personal literature-tracking & learning radar**. It pulls dozens of journal RSS / PubMed-search feeds, scores and ranks them against *your* research interests, and pushes them to a **private, just-for-you web page** to swipe and triage; the papers you pick then flow back into your own note system. I originally built it to keep up with new papers while studying for the **PM&R (Physical Medicine & Rehabilitation)** board exam — this is the cleaned-up, self-hostable open-source version.
 
@@ -97,9 +97,9 @@ My own downstream is an on-demand process that reads unsynced D1 actions → sha
 > That stage is **tightly coupled to my personal Obsidian + LLM toolchain and is not in this repo.** `_worker.js`'s `GET /api/state?unsynced=1` is the hook for any downstream — wire it to whatever you want (store to Notion, hand to an LLM, email yourself…). Think of it as: the radar already filtered, ranked, and tagged full-text for you — do whatever you like with the result.
 
 > 🔗 My own "🔬 quality appraisal / 📚 content digest" downstream is open-sourced as
-> [**claude-paper-tools**](https://github.com/drpwchen/claude-paper-tools) (`/paper-review` + `/paper-digest`,
+> [**paper-review-and-digest**](https://github.com/drpwchen/paper-review-and-digest) (`/paper-review` + `/paper-digest`,
 > with deterministic GRADE recompute and a CrossRef citation gate). paper-radar is the *discovery* end,
-> claude-paper-tools is the *reading* end — together they form the full paper-reading pipeline.
+> paper-review-and-digest is the *reading* end — together they form the full paper-reading pipeline.
 
 ## PRPM v2 · Personal Research Preference Model
 
