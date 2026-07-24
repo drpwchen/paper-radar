@@ -207,3 +207,17 @@ python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂
 如果這個工具幫你省下時間，歡迎請我喝杯珍奶，讓伺服器繼續轉下去 🧡
 
 <a href="https://drpwchen.bobaboba.me"><img src="https://s3.ap-southeast-1.amazonaws.com/media.anyonelab.com/images/boba/boba-embed-icon.png" height="36" alt="boba icon" align="middle"> <img src="https://img.shields.io/badge/BUY_ME_A_BOBA-F8E0BE?style=for-the-badge" height="36" alt="BUY ME A BOBA" align="middle"></a>
+
+---
+
+## 🌱 Start here if you're new to AI agents ／ AI agent 新手起點
+
+This tool is one piece of my personal AI workflow. If you want to learn how to use AI agents like Claude Code from zero (no programming background needed), I wrote a beginner series (in Traditional Chinese):
+
+這個工具是我個人 AI 工作流的一部分。想從零開始學怎麼用 Claude Code 這類 AI agent（不需要程式背景），可以從我的入門系列開始：
+
+1. [從零開始：安裝、看懂 GitHub、跑起你的第一個工具](https://drpwchen.com/posts/getting-started/)
+2. [怎麼跟 AI agent 講話：心法、元技能與規則檔](https://drpwchen.com/posts/talking-to-agents/)
+3. [自動化流程不是設計出來的，是長出來的](https://drpwchen.com/posts/growing-your-workflow/)
+
+Full map of my tools and posts ／ 所有工具與文章的全貌 → [drpwchen.com/map](https://drpwchen.com/map/)
