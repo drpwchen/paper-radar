@@ -4,6 +4,13 @@
 
 本專案的重大變更紀錄。版本語意：`vMAJOR.MINOR`。
 
+## v2.0.2 (2026-11-14) — 文件：README 品質整理
+
+- 快速開始移到架構之前，並補上「需求與費用」；新增「限制」章節。
+- 加入支持連結（drpwchen.com/support）；英文版支持區塊的連結文字一併統一。
+- 新增 `SECURITY.md`、`CITATION.cff`。
+- 僅文件與 repo metadata，程式行為不變。
+
 ## v2.0.1 (2026-07-14) — 文件：下游 repo 更名
 
 - 閱讀端 repo `claude-paper-tools` 更名為 **`paper-review-and-digest`**（讓名字直接說明它做什麼）。README 中英版的互連連結同步更新；舊 GitHub 網址仍會自動轉址，既有連結不會斷。
@@ -38,6 +45,13 @@
 # Changelog
 
 Notable changes. Versioning: `vMAJOR.MINOR`.
+
+## v2.0.2 (2026-11-14) — Docs: README quality pass
+
+- Quick start now comes before Architecture, with a new "Requirements & cost" block; added a "Limitations" section.
+- Added the support link (drpwchen.com/support) and aligned the wording of the English support block.
+- Added `SECURITY.md` and `CITATION.cff`.
+- Docs and repo metadata only; no behavior change.
 
 ## v2.0.1 (2026-07-14) — Docs: downstream repo renamed
 

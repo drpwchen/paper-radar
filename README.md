@@ -23,6 +23,35 @@
 
 > 這是一人維護的 side project。**核心（雷達本身）可自架重用**；「回流筆記」那段綁我個人的 Obsidian + LLM 工具鏈，請當成範例、接成你自己的下游。
 
+## 快速開始（本機跑抓取＋評分）
+
+**需求與費用**
+- 本機跑抓取＋評分：Python 3.11+，不需要任何雲服務、不需要付費帳號；Windows／macOS／Linux 皆可，不需要 GPU。
+- 全文判定：Unpaywall API 免費，需要一個 email；機構 SFX 為選用，要有你自己機構的授權。
+- 私密網站（選用）：Cloudflare Pages + D1 + R2 + Access，我用的量都在免費額度內；另需一台能定時跑 cron 的主機（我用 Oracle Cloud Free Tier）。
+- LLM facet 分類（選用）：`GROQ_API_KEY`，沒設就自動跳過。
+- 純本機跑的現金成本是 0；上線私密站的成本取決於你自己選的主機與用量。
+
+```bash
+git clone https://github.com/<you>/paper-radar.git
+cd paper-radar
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+cp config.example.yaml config.yaml          # 編輯成你的 feeds / email / 站台網域
+cp interest_model.example.json interest_model.json
+cp env.example .env                          # 填 CF / ntfy 等（部署才需要）
+
+# 純本機：抓取 + 評分（不需要任何雲服務）
+python fetch_and_score.py                    # 全部 feed → papers.json
+python fetch_and_score.py --only eswt,pain --limit 8   # 只跑某幾個 feed
+python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂閱）
+```
+
+打開 `site/index.html`（或 `python -m http.server` 起一個本機伺服器）即可看到前端讀 `papers.json` 渲染。`site/papers.sample.json` 是附的合成範例，方便 clone 後立刻看到畫面。
+
+> 🧋 省了你時間的話，[請我喝杯飲料](https://drpwchen.com/support/)。
+
 ## 架構
 
 ```
@@ -151,28 +180,6 @@ v1 的排序只看一組手寫關鍵字權重、只吃 👍👎、還得手動�
 |---|---|
 | ![列表](docs/screenshots/list.png) | ![篩選](docs/screenshots/filter.png) |
 
-## 快速開始（本機跑抓取＋評分）
-
-需求：Python 3.11+。
-
-```bash
-git clone https://github.com/<you>/paper-radar.git
-cd paper-radar
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-cp config.example.yaml config.yaml          # 編輯成你的 feeds / email / 站台網域
-cp interest_model.example.json interest_model.json
-cp env.example .env                          # 填 CF / ntfy 等（部署才需要）
-
-# 純本機：抓取 + 評分（不需要任何雲服務）
-python fetch_and_score.py                    # 全部 feed → papers.json
-python fetch_and_score.py --only eswt,pain --limit 8   # 只跑某幾個 feed
-python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂閱）
-```
-
-打開 `site/index.html`（或 `python -m http.server` 起一個本機伺服器）即可看到前端讀 `papers.json` 渲染。`site/papers.sample.json` 是附的合成範例，方便 clone 後立刻看到畫面。
-
 ## 部署到 Cloudflare（私密站）
 
 完整步驟見 [`docs/DEPLOY.md`](docs/DEPLOY.md)，摘要：
@@ -193,6 +200,15 @@ python enrich.py --limit 20                  # 加值前 20 篇（OA / 機構訂
 - **保留 worker 內的配額硬擋**（月上傳數、單檔大小），避免被誤用或自己手滑爆掉免費額度。
 - **ntfy**：用有 token 的私有 topic，別用容易被猜到的公開 topic 名稱。
 - **全文取用守規矩**：OA 層隨意；機構訂閱層的取用與下載，請遵守你機構授權與各出版社 ToS——本工具只幫你判定「可不可取得」並給連結，不繞過任何付費牆。
+
+## 限制
+
+- 沒有公開 demo：我自己的站台在 Cloudflare Access 後面，只能看截圖。
+- 「回流筆記」那段綁我個人的 Obsidian + LLM 工具鏈，這個 repo 只給概念與範例，不是可直接用的下游。
+- 本工具只判定全文「可不可取得」並給連結，不繞過任何付費牆。
+- 私密網站需要自己架 Cloudflare（或等價服務）並設好存取控制；只跑本機抓取＋評分則沒有這個負擔。
+- 一人維護的 side project，沒有 SLA。
+
 
 ## 授權
 

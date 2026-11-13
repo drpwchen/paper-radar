@@ -23,6 +23,32 @@ Dozens of journals update daily, plus a few authors and topics I want to follow.
 
 > A solo side project. The **radar itself is reusable and self-hostable**; the "flow back into notes" stage is wired to my personal Obsidian + LLM toolchain — treat it as an example and wire your own downstream.
 
+## Quick start (run fetch + scoring locally)
+
+Requires Python 3.11+.
+
+```bash
+git clone https://github.com/<you>/paper-radar.git
+cd paper-radar
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+cp config.example.yaml config.yaml          # edit your feeds / email / site domain
+cp interest_model.example.json interest_model.json
+cp env.example .env                          # fill CF / ntfy (only needed to deploy)
+
+# Local only: fetch + score (no cloud service required)
+python fetch_and_score.py                    # all feeds → papers.json
+python fetch_and_score.py --only eswt,pain --limit 8   # just a few feeds
+python enrich.py --limit 20                  # enrich first 20 (OA / institutional)
+```
+
+Open `site/index.html` (or serve it with `python -m http.server`) to see the front-end render `papers.json`. `site/papers.sample.json` is a bundled synthetic sample so the UI renders right after cloning.
+
+
+> 🧋 Saved you some time? [Buy me a drink](https://drpwchen.com/en/support/).
+
+
 ## Architecture
 
 ```
@@ -154,28 +180,6 @@ This project is built on a few services that **mostly have free tiers**. Use the
 |---|---|
 | ![list](docs/screenshots/list.png) | ![filter](docs/screenshots/filter.png) |
 
-## Quick start (run fetch + scoring locally)
-
-Requires Python 3.11+.
-
-```bash
-git clone https://github.com/<you>/paper-radar.git
-cd paper-radar
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-cp config.example.yaml config.yaml          # edit your feeds / email / site domain
-cp interest_model.example.json interest_model.json
-cp env.example .env                          # fill CF / ntfy (only needed to deploy)
-
-# Local only: fetch + score (no cloud service required)
-python fetch_and_score.py                    # all feeds → papers.json
-python fetch_and_score.py --only eswt,pain --limit 8   # just a few feeds
-python enrich.py --limit 20                  # enrich first 20 (OA / institutional)
-```
-
-Open `site/index.html` (or serve it with `python -m http.server`) to see the front-end render `papers.json`. `site/papers.sample.json` is a bundled synthetic sample so the UI renders right after cloning.
-
 ## Deploy to Cloudflare (private site)
 
 Full steps in [`docs/DEPLOY.md`](docs/DEPLOY.md); summary:
@@ -197,6 +201,15 @@ Even a just-for-me site must be defended like a public service once it's on the 
 - **ntfy**: use a private, token-protected topic, not a guessable public name.
 - **Respect full-text access**: OA tier is fair game; institutional access and downloads must follow your institution's license and each publisher's ToS — this tool only determines *availability* and links out, it never bypasses a paywall.
 
+## Limitations
+
+- No public demo: my own instance sits behind Cloudflare Access, so you only get screenshots.
+- The "flow back into your notes" stage is tied to my personal Obsidian + LLM toolchain; this repo gives the concept and examples, not a ready-made downstream.
+- It only tells you whether full text is obtainable and links to it; it does not bypass any paywall.
+- The private site needs your own Cloudflare (or equivalent) setup with access control; local fetch + scoring has no such burden.
+- A one-person side project with no SLA.
+
+
 ## License
 
 [MIT](LICENSE). Fork it and retarget it to your own field — not just medicine, any literature source with RSS/an API works.
@@ -207,6 +220,6 @@ Even a just-for-me site must be defended like a public service once it's on the 
 
 ## 🧋 Support
 
-If this tool saves you time, you can buy me a boba — it keeps the servers running 🧡
+If this tool saves you time, you can [buy me a drink](https://drpwchen.com/en/support/) — it keeps the servers running 🧡
 
 [![Buy me a drink](https://img.shields.io/badge/🧋_Buy_me_a_drink-8a6d4e?style=for-the-badge)](https://drpwchen.com/en/support/)
